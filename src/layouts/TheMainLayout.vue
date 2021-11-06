@@ -1,15 +1,16 @@
 <template>
   <div class="r">
-    {{`U+2300` + count}}
+    
   </div>
   <select name="standarts">
     <option v-for="standart in pipes_gosts" :key="standart.name">
-      {{standart.name + ` "${standart.title}"`}}
+      <b>{{standart.name}}</b>  {{` "${standart.title}"`}}
     </option>
   </select>
   <select name="diameters">
     <option v-for="(diameter, index) in diameters" :key="index">
-      {{`DN `+diameter}}
+      <em>DN</em>
+      {{diameter}}
     </option>
   </select>
   <input type="number" value="1,0" min="0" max="300" step="0.1" inputmode="numeric" size="7" />
@@ -37,5 +38,12 @@ export default {
 <style lang="scss">
 .r{
   background-color: bisque;
+}
+ .i {
+    font-style: italic;
+}
+em {
+    color:red;
+    font: bold 14px Arial, sans-serif; 
 }
 </style>
